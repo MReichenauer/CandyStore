@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Om oss</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <header class="myHeader">
+          <div id="headerDiv">
+            <div class="headerText">
+              <h1 id="headText">Bortakväll</h1>
+            </div>
+            <div class="headerText">
+              <h3 id="Antal-godissorter">Vårt sortiment</h3>
+            </div>
+          </div>
+          <div class="navbar">
+            <div class="hamburger-menu" id="hamburger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <ul id="mainNav">
+              <li id="toppen">Start sidan</li>
+              <li id="about"><a href="about.html">Om oss</a></li>
+              <li id="contact"><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </div>
+        </header>
+        <div id="mainPageAndBasket">
+          <div id="app">
+            <div id="aboutUs">
+              <h2><strong>Om oss</strong></h2>
+              <p>
+                Välkommen till Bortakväll, ditt hem för en smakfull upplevelse
+                av lösgodis! Vi är en passionerad och familjeägd godisbutik som
+                strävar efter att erbjuda det bästa och mest mångsidiga
+                sortimentet av läckra godisar.
+              </p>
+              <p>
+                Vår historia började med kärleken till godis och önskan att
+                skapa en plats där människor kan upptäcka och njuta av en
+                mångfald av smaker. På Bortakväll hittar du allt från klassiska
+                favoriter till spännande nya smaker, noggrant utvalda för att
+                tillfredsställa alla smaklökar.
+              </p>
+              <p>
+                Vi sätter kvalitet och nöjdhet i första hand. Våra produkter är
+                noggrant utvalda från pålitliga leverantörer för att säkerställa
+                en hög standard av smak och fräschhet. Oavsett om du letar efter
+                söta, sura eller salta godisar, har vi något för alla tillfällen
+                och smaker.
+              </p>
+              <p>
+                Vårt dedikerade team strävar efter att skapa en mysig och
+                välkomnande atmosfär där du kan inspireras och upptäcka nya
+                favoriter. Vi är stolta över att vara en del av gemenskapen och
+                ser fram emot att dela vårt godisäventyr med dig.
+              </p>
+              <p>
+                Kom och besök oss på Bortakväll för en smakresa som tar dina
+                smaklökar till nya höjder. Vi ser fram emot att skapa
+                godisminnen tillsammans med dig!
+              </p>
+              <h4>
+                Välkommen till Bortakväll - där varje kväll blir speciell med
+                godisglädje!
+              </h4>
+            </div>
+          </div>
+          <div>
+            <!-- Gonna have shoppingcart svg here -->
+          </div>
+          <!-- Down here is the shoppingcart window -->
+          <div id="shoppingCart" class="noShow">
+            <div id="navCart">
+              <h4>Din varukorg</h4>
+              <button
+                id="closeCartBtn"
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <ul id="cartList"></ul>
+            <hr />
+            <p>Summa<span id="cartSumma"></span></p>
+            <button id="toCashierBtn" class="btn btn-success">
+              Till kassan
+            </button>
+          </div>
+          <div id="cartIcon">
+            <i id="cartIcon2" class="fa-solid fa-cart-shopping fa-2xl"
+              ><span id="cartNum">0</span></i
+            >
+          </div>
+        </div>
+        <div>
+          <i class="fa-solid fa-plane-up fa-2xl" id="scrollToTopOfPage"></i>
+        </div>
+        <!--Customer information form-->
+        <main id="checkOutCart" style="display: none">
+          <div id="customerOverview">
+            <!-- <form id="customerDetails" action="submit_form" method="post"> -->
+            <form id="customerDetails">
+              <h2>Privatkund</h2>
+              <div id="firstName" class="form-floating">
+                <input
+                  id="customerFirstName"
+                  type="text"
+                  class="form-control"
+                  name="firstName"
+                  pattern="[A-Za-zÅÄÖåäö\-]+"
+                  placeholder="First Namn"
+                  title="Fyll i förnamn. Endast bokstäver och bindestreck tillåtet"
+                  required
+                /><label for="customerFirstName">Förnamn</label>
+              </div>
+              <div id="lastName" class="form-floating">
+                <input
+                  id="customerLastName"
+                  type="text"
+                  class="form-control"
+                  name="lastName"
+                  pattern="[A-Za-zÅÄÖåäö\-]+"
+                  placeholder="Efternamn"
+                  title="Fyll i efternamn. Endast bokstäver och bindestreck tillåtet"
+                  required
+                /><label for="customerLastName">Efternamn</label>
+              </div>
+              <div id="streetAddress" class="form-floating">
+                <input
+                  id="customerAddress"
+                  class="form-control"
+                  type="text"
+                  name="streetAddress"
+                  pattern="^(?=.*[A-Za-zÅÄÖåäö])(?=.*\d)[A-Za-zÅÄÖåäö\d\s\-,]+"
+                  placeholder="Leverans address"
+                  title="Fyll i leverans address. Endast bokstäver, siffror och bindestreck tillåtet. Fyll i enligt exempel: Leveransgatan 23"
+                  required
+                /><label for="customerAddress">Leverans address</label>
+              </div>
+              <div id="city" class="form-floating">
+                <input
+                  id="customerCity"
+                  class="form-control"
+                  type="text"
+                  name="ort"
+                  pattern="[A-Za-zÅÄÖåäö\-]+"
+                  placeholder="Ort"
+                  title="Fyll i ort. Endast bokstäver och bindestreck tillåtet"
+                  required
+                />
+                <label for="customerCity">Ort</label>
+              </div>
+              <div id="zipCode" class="form-floating">
+                <input
+                  id="customerZipCode"
+                  type="tel"
+                  maxlength="6"
+                  class="form-control"
+                  name="zipCode"
+                  pattern="^[0-9]{5}$|^[0-9]{3} [0-9]{2}$"
+                  title="Ange postnummer enligt följande exempel: 12345 eller 123 45"
+                  placeholder="Postnummer"
+                  required
+                /><label for="customerZipCode">Postnummer</label>
+              </div>
+
+              <div id="phoneNumber" class="form-floating">
+                <input
+                  id="customerPhoneNumber"
+                  type="tel"
+                  maxlength="12"
+                  class="form-control"
+                  name="phoneNumber"
+                  pattern="(07[0-9]{8}|\+467[0-9]{8})"
+                  placeholder="Telefonnummer"
+                  title="Ange telefonnummer enligt instruktioner. +46 följt av 9 siffror eller 07 följt av 8 siffror"
+                  required
+                /><label for="customerPhoneNumber">Telefonnummer</label>
+              </div>
+              <div id="email" class="form-floating">
+                <input
+                  id="customerEmail"
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="E-postaddress"
+                  required
+                /><label for="customerEmail">E-postaddress</label>
+              </div>
+              <div id="paymentOption" class="form-floating">
+                <label for="paymentOpt">Betalningsmetod</label>
+                <select
+                  class="form-select"
+                  id="paymentOpt"
+                  name="paymentOption"
+                  required
+                >
+                  <option value="">Välj</option>
+                  <option id="paymentTypeOne">Kreditkort</option>
+                  <option id="paymentTypeTwo">Swish</option>
+                  <option id="paymentTypeThree">Banköverföring</option>
+                  <option id="paymentTypeFour">Faktura</option>
+                </select>
+              </div>
+              <div id="checkOutBtn">
+                <button id="submitOrder" type="submit" class="btn btn-success">
+                  Slutför order på: 0 SEK
+                </button>
+                <button id="shopMore" type="submit" class="btn btn-info">
+                  Fortsätt handla
+                </button>
+              </div>
+            </form>
+          </div>
+          <!--Customer basket overview-->
+          <div id="orderOverviewTotal">
+            <div>
+              <h2>Beställningsöversikt</h2>
+              <hr class="orderOverviewHorizontal" />
+            </div>
+            <div>
+              <ul id="cartListOverview"></ul>
+            </div>
+            <div id="basketTotal">
+              <h3 id="orderOverviewTotalSum1">
+                Totalt belopp: <span id="orderOverviewTotalSum">0</span> SEK
+              </h3>
+            </div>
+          </div>
+        </main>
+        <article id="landingPage" class="landingPage" style="display: none">
+          <div id="landingPageItem">
+            <h2 class="orderLandingPageTitle">Orderbekräftelse</h2>
+            <hr />
+            <div id="orderNumberAndDate">
+              <h3 id="orderNumber">Ordernummer: 1078</h3>
+              <hr class="orderNumberAndDate" />
+              <h4 id="dateAndTime">Orderdatum:</h4>
+            </div>
+            <hr />
+            <p id="orderNumberTwo">
+              Tack för din beställning! Här kommer din orderbekräftelse med
+              ordernummer:
+            </p>
+            <hr />
+            <ul id="customerInformation"></ul>
+            <hr />
+            <p>Beställda artiklar:</p>
+            <hr />
+            <ul id="cartListTotalResult"></ul>
+            <p id="orderResultSum">Total summa: 0 SEK</p>
+            <hr />
+            <button
+              type="button"
+              id="resetBtn"
+              class="btn btn-outline-secondary"
+            >
+              Gå tillbaka
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="myFooter">
+      <div class="contact-us">
+        <p><b>Adress</b></p>
+        <p>Boulevard Venue 88</p>
+        <p>Miami, 21252 Florida</p>
+        <p>Tel: 0822-700800</p>
+        <p>Fax: 0822-700801</p>
+      </div>
+      <div class="media-socials">
+        <p>Följ oss på</p>
+        <p><i class="fa-brands fa-square-instagram"></i>Instagram</p>
+        <p><i class="fa-brands fa-facebook"></i>Facebook</p>
+        <p><i class="fa-brands fa-twitter"></i>Twitter</p>
+        <p><i class="fa-brands fa-linkedin"></i>Linkedin</p>
+        <p><i class="fa-brands fa-tiktok"></i>Tiktok</p>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/ab8f74345f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/cart.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/checkout.ts"></script>
+    <script type="module" src="/src/order.ts"></script>
+  </body>
+</html>
